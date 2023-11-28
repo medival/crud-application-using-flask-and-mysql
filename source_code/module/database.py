@@ -5,14 +5,20 @@ Created on Jan 10, 2017
 '''
 
 import pymysql
+from dotenv import load_dotenv
 import os
 
 class Database:
+    def __init__(self):
+        workdir = os.path.dirname(os.path.abspath(__file__))
+        dotenv_path = os.path.join(workdir, '../.env')
+        load_dotenv(dotenv_path) 
+
     def connect(self):
-        host = os.environ.get("MYSQL_HOST")
-        user = os.environ.get("MYSQL_USER")
-        password = os.environ.get("MYSQL_PASSWORD")
-        database = os.environ.get("MYSQL_DATABASE")
+        host = os.getenv("MYSQL_HOST")
+        user = os.getenv("MYSQL_USER")
+        password = os.getenv("MYSQL_PASSWORD")
+        database = os.getenv("MYSQL_DATABASE")
 
         return pymysql.connect(host=host, user=user, password=password, database=database, charset='utf8mb4')
 
