@@ -11,7 +11,7 @@ import os
 class Database:
     def __init__(self):
         workdir = os.path.dirname(os.path.abspath(__file__))
-        dotenv_path = os.path.join(workdir, '../.env')
+        dotenv_path = os.path.join(workdir, '.env')
         load_dotenv(dotenv_path) 
 
     def connect(self):
