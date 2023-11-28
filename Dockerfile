@@ -12,4 +12,4 @@ COPY source_code/ /app
 
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "-w", "4", "server:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "server:app"]
