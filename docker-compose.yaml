@@ -12,9 +12,9 @@ services:
     container_name: phonebook-app
     build:
       context: .
-      dockerfile: Dockerfile-app
+      dockerfile: Dockerfile
     depends_on:
       - phonebook-mysql
     ports:
-      - "8181:8181"
+      - "8080:8080"
     restart: always
