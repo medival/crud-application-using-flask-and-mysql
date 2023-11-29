@@ -8,17 +8,7 @@ import pymysql
 import os
 import io
 
-from dotenv import load_dotenv
-
 class Database:
-    def __init__(self):
-        load_dotenv() 
-        load_dotenv(".env")
-        load_dotenv(stream=io.StringIO(os.environ.get("MYSQL_HOST", None))
-        load_dotenv(stream=io.StringIO(os.environ.get("MYSQL_USER", None))
-        load_dotenv(stream=io.StringIO(os.environ.get("MYSQL_PASSWORD", None))
-        load_dotenv(stream=io.StringIO(os.environ.get("MYSQL_DATABASE", None))
-
     def connect(self):
         host = os.getenv("MYSQL_HOST")
         user = os.getenv("MYSQL_USER")
